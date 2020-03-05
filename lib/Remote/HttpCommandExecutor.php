@@ -16,6 +16,10 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
     const DEFAULT_HTTP_HEADERS = [
         'Content-Type: application/json;charset=UTF-8',
         'Accept: application/json',
+
+        // The following header is required when connecting to Chromium-based browser via Selenium 4 to avoid
+        // error: "Host header or origin header is specified and is not localhost.".
+        'Host: localhost',
     ];
 
     /**
